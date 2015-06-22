@@ -1,9 +1,9 @@
 require 'httparty'
-require 'pry'
-require 'dotenv'
+require_relative 'search'
 
 module RIDB
   class Client
+    include RIDB::Search
 
     include HTTParty
     base_uri 'https://ridb.recreation.gov/'
