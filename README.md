@@ -16,7 +16,7 @@ Register for an API key [here.](https://ridb.recreation.gov/?action=register)
 
   ```ruby
   client = RIDB::Client.new(API_KEY)
-  #returns a collection of all USDA campsites
+  #get a collection of all USDA campsites
   client.campsites
 
   #get names of all USDA recreation areas
@@ -32,7 +32,7 @@ Register for an API key [here.](https://ridb.recreation.gov/?action=register)
     # => "American Battle Monuments Commission"
 
     p client.recreation_areas.first.description
-    # => "WestWorld is located in north Scottsdale at the base of the McDowell Mountains.  Surrounded by the Sonoran Desert with over 360 acres of pristine landscaping, the covered Equidome Arena, Brett's Barn, and state-of-the-art equine facilities provide a spectacular setting for a variety of venues..."
+    # => "WestWorld is located in north Scottsdale at the base of the McDowell Mountains..."
 
     p client.facilities.first.fee
     # => "None"
@@ -45,11 +45,11 @@ Register for an API key [here.](https://ridb.recreation.gov/?action=register)
   ```
 
   ## To Contribute
-  - fork
-  - clone
-  - bundle
-  - make awesome changes
-  - run tests
+  - Fork
+  - Bundle
+  - Create a feature branch
+  - Commit your changes
+  - Push to the new branch
   - PR
 
   PRs and suggestions happily accepted.
