@@ -1,11 +1,12 @@
 require 'httparty'
 require 'pry'
+require 'dotenv'
 
 module RIDB
   class Client
 
     include HTTParty
-    base_uri 'https://ridb-dev.nsitellc.com'
+    base_uri 'https://ridb.recreation.gov/'
 
     def initialize(key)
       @options = { headers: {'apikey' => key} }
@@ -132,12 +133,11 @@ module RIDB
       @directions = data['FacilityDirections']
       @name = data['FacilityName']
       @keywords = data['Keywords']
-      @fee = data['FacilityUseFeeDescription'] == '' ? 'Free' : data['FacilityUseFeeDescription']
+      @fee = data['FacilityUseFeeDescription'] == '' ? 'None' : data['FacilityUseFeeDescription']
       @stay_limit = data['StayLimit']
       @last_updated_date = data['LastUpdatedDate']
       @is_accessible = data['FacilityAdaAccess'] ? true : false
       @id = data['FacilityID']
     end
   end
-
 end
